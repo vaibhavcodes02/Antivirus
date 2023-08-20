@@ -1,28 +1,53 @@
-import os
-import hashlib
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antivirus Software</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Downloads</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-# Function to calculate MD5 hash of a file
-def calculate_md5(file_path):
-    md5_hash = hashlib.md5()
-    with open(file_path, "rb") as f:
-        for chunk in iter(lambda: f.read(4096), b""):
-            md5_hash.update(chunk)
-    return md5_hash.hexdigest()
+    <section class="hero">
+        <h1>Protect Your Devices with Our Antivirus Software</h1>
+        <p>Keep your computer safe from malware, viruses, and online threats.</p>
+        <a href="#" class="cta-button">Get Started</a>
+    </section>
 
-# Function to scan a directory for potentially malicious files
-def scan_directory(directory):
-    for root, dirs, files in os.walk(directory):
-        for file in files:
-            file_path = os.path.join(root, file)
-            md5_hash = calculate_md5(file_path)
-            print(f"Scanning: {file_path}, MD5: {md5_hash}")
+    <section class="features">
+        <div class="feature">
+            <h2>Real-time Protection</h2>
+            <p>Our software monitors your system 24/7 for any suspicious activity and blocks threats in real-time.</p>
+        </div>
+        <div class="feature">
+            <h2>Regular Updates</h2>
+            <p>We constantly update our virus definitions to keep up with the latest threats, ensuring your protection.</p>
+        </div>
+        <div class="feature">
+            <h2>Easy to Use</h2>
+            <p>Our intuitive user interface makes it simple for anyone to scan for and remove viruses.</p>
+        </div>
+    </section>
 
-            # Add your malware detection logic here
-            # For demonstration purposes, we'll just print a message
-            if "malicious" in file:
-                print(f"!!! Potentially malicious file found: {file_path} !!!")
+    <section class="download">
+        <h2>Download Our Antivirus Software Today</h2>
+        <p>Start protecting your devices now.</p>
+        <a href="#" class="cta-button">Download Now</a>
+    </section>
 
-# Main function
-if __name__ == "__main__":
-    directory_to_scan = "/path/to/scan"
-    scan_directory(directory_to_scan)
+    <footer>
+        <p>&copy; 2023 Antivirus Software. All rights reserved.</p>
+    </footer>
+</body>
+</html>
